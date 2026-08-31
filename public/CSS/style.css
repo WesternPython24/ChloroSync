@@ -1,0 +1,78 @@
+
+a {
+    padding : 1rem;
+    color: #ffeffb;
+}
+
+body {
+    font-family: garamond, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 1.5rem solid #496949;
+    z-index: -1;
+}
+
+header{
+    font-family: garamond, Helvetica, sans-serif;
+}
+
+nav {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #004f00;
+    padding:0;
+    margin:0;
+    z-index: 1;
+    top:0;
+    left:0;
+    width: 100%;
+    position: sticky;
+}
+
+.sensorReadingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.sensorReading {
+    color: #006400;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    padding: 1rem;
+    border: 2px solid #006400;
+}
+
+
+.value {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.plantEditDelete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#plantName {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#addPlant{
+    margin: 2rem;
+    border: 1px solid #004f00;
+    padding: 0.5rem;
+}
+
+#addPlant:hover {
+    background-color: #004f00;
+    color: #ffeffb;
+}
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <nav class="nav-list">
+        <a href="index.html">Home</a>
+        <a href="myPlants.html">My Plants</a>
+        <a href="help.html">Help</a>
+    </nav>
+</head>
+
+<body>
+    <div class="plants">
+        <button id="addPlant">Add Plant</button>
+        <section class="PlantDataSection"></section>
+            <h1 id="plantName">Plant Name</h1>
+            <div class="plantEditDelete">
+                <button id="EditPlant">Edit</button>
+                <button id="deletePlant">Delete Plant</button>
+            </div>
+            <div class="sensorReadingContainer">
+
+                <div class="sensorReading" data-sensor="temperature">
+                    <h2>Temperature</h2>
+                    <p><span id="temperatureValue" class="value">--</span> &deg;C</p>
+                </div>
+
+                <div class="sensorReading" data-sensor="humidity">
+                    <h2>Humidity</h2>
+                    <p><span id="humidityValue" class="value">--</span> %</p>
+                </div>
+
+                <div class="sensorReading" data-sensor="groundMoisture">
+                    <h2>Ground Moisture Content</h2>
+                    <p><span id="groundMoistureValue" class="value">--</span> %</p>
+                </div>
+
+                <div class="sensorReading" data-sensor="lightLevel">
+                    <h2>Light Level</h2>
+                    <p><span id="lightLevelValue" class="value">--</span> lux</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+</body>
+
+
+
+</html>
