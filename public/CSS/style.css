@@ -10,6 +10,7 @@ body {
     margin: 0;
     border: 1.5rem solid #496949;
     z-index: -1;
+    min-height: 100vh;
 }
 
 header{
@@ -32,13 +33,16 @@ nav {
 
 .sensorReadingContainer {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
 }
 
 .sensorReading {
+    text-align: center;
+    display: flex;
+    flex:1;
+    flex-direction: column;
     color: #006400;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
     padding: 1rem;
