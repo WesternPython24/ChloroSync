@@ -1,7 +1,7 @@
-const webSocketServer = new WebSocket('ws://localhost:3000');
+const webSocketServer = new WebSocket('ws://localhost:3000/ws?type=browser');
 
 webSocketServer.onmessage = async (message) => {
-    console.log(`Received: ${message.data}`);
+    console.log( new Date().toLocaleString() + ` Received: ${message.data}` );
     updatePlantData(1, message.data);
 }
 

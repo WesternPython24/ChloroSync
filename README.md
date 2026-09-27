@@ -1,4 +1,4 @@
-# ChloroSync
+# ChloroSync (Sep 2026)
 
 
 ## Chlorosync will use multiple different sensors to detect levels of light, humidity, soil moisture content, temperature, and possibly leaf color data. This data will be sent to a microcontroller (likely an ESP32), passing data to a Raspberry Pi which hosts a website. The website will be able to connect to as many plant's setups as a user would like, all remotely through the convenience of Wi-Fi. The website will display both current and historical data the sensors collect. 
@@ -25,5 +25,15 @@
 ## This next coming week I will add temp/humidity sensor, soil water content sensor
 
 ## The raspberry pi 1 data scripts I will be pushing to a different branch
+
+
+
+# 9/26
+
+## DHT22 is working end to end from data collection to client. Successfully added websocket connection differentiation between data-nodes and browser clients by making the url req contain type=browser or type=data-node
+
+## designed and partial implementation of database in module folder using node SQLite. 
+
+![alt text](dbERM.png)
 
 
