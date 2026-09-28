@@ -1,16 +1,24 @@
 
 a {
-    padding : 1rem;
+    padding-inline : 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     color: #ffeffb;
 }
 
 body {
+    background-image: url("../images/jovan-vasiljevic-D9SD5wciKtU-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: garamond, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
     border: 1.5rem solid #496949;
     z-index: -1;
     min-height: 100vh;
+    background-color: #a9cda9;
+  
 }
 
 header{
@@ -21,18 +29,20 @@ nav {
     display:flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #004f00;
+    background-color: #466646;
     padding:0;
     margin:0;
     z-index: 1;
     top:0;
     left:0;
     width: 100%;
-    position: sticky;
+    position: fixed;
 }
 
 .sensorReadingContainer {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
@@ -40,18 +50,39 @@ nav {
 
 .sensorReading {
     text-align: center;
-    display: flex;
     flex:1;
-    flex-direction: column;
-    color: #006400;
+    color: #eaf1ea;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
     padding: 1rem;
-    border: 2px solid #006400;
+    border: 5px solid #c6c780;
+    border-radius: 10px;
+    max-width: 15%;
+    background-color: #4f7a66;
+    box-shadow: 10px 10px 5px rgba(35, 78, 26, 0.3);
+}
+
+
+
+.plantData{
+    display: flex;
+    flex-basis: 100%;
+}
+
+
+.moistureReading{
+    text-align: center;
+    color: #e5eee5;
+    background-color: #3f6050;
+    box-shadow: 10px 10px 5px rgba(31, 92, 40, 0.3);
+    padding: 1rem;
+    border: 5px solid #bbcf78;
+    border-radius: 15px;
+
 }
 
 
 .value {
-    font-size: 5rem;
+    font-size: 50px;
     font-weight: bold;
 }
 
@@ -62,21 +93,49 @@ nav {
     gap: 1rem;
 }
 
-#plantName {
+#plantSectionHeader {
     font-size: 2rem;
+    width: fit-content;
     font-weight: bold;
-    text-align: center;
+    margin: auto;
+    color:#e3e651;
+    background-color: #2a632a;
+    padding: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px rgba(31, 92, 40, 0.3);
+    border: 5px solid #9e9e21;
+    
+
 }
 
 #addPlant{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+   
+}
+
+
+button {
     margin: 2rem;
     border: 1px solid #004f00;
     padding: 0.5rem;
+    background-color: #006400;
+    color: #d0d0c1;
+    border-radius: 10px;
+
 }
 
-#addPlant:hover {
-    background-color: #004f00;
-    color: #ffeffb;
+button:hover {
+    background-color: #60d660;
+    color: #e638bb;
+
 }
 
+button:active {
+    background-color: #bbcf78;
+
+}
 

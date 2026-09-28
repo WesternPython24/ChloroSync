@@ -6,22 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../scripts/plantData.js" defer></script>
-    <nav class="nav-list">
-        <a href="index.html">Home</a>
-        <a href="myPlants.html">My Plants</a>
-        <a href="help.html">Help</a>
-    </nav>
 </head>
 
+
+
 <body>
-    <div class="plants">
-        <button id="addPlant">Add Plant</button>
-        <section class="PlantData1"></section>
-            <h1 id="plantName">Plant Name</h1>
+    <header>
+        <h2></h2>
+        <nav class="nav-list">
+            <a href="index.html">Home</a>
+            <a href="myPlants.html">My Plants</a>
+            <a href="help.html">Help</a>
+        </nav>
+
+    </header>
+
+    <button id = addPlantSection>Add Plant Section</button>
+    <div class="plantContiner">
+        <section class="plantSection1"></section>
+            <h1 id="plantSectionHeader">Plant Section Name</h1>
             <div class="plantEditDelete">
                 <button id="EditPlant">Edit</button>
-                <button id="deletePlant">Delete Plant</button>
+                <button id="deletePlant">Delete Section</button>
             </div>
+
             <div class="sensorReadingContainer">
 
                 <div class="sensorReading" data-sensor="temperature">
@@ -33,16 +41,36 @@
                     <h2>Humidity</h2>
                     <p><span id="humidityValue" class="value">--</span> %</p>
                 </div>
-
-                <div class="sensorReading" data-sensor="groundMoisture">
-                    <h2>Ground Moisture Content</h2>
-                    <p><span id="groundMoistureValue" class="value">--</span> %</p>
-                </div>
-
                 <div class="sensorReading" data-sensor="lightLevel">
                     <h2>Light Level</h2>
                     <p><span id="lightLevelValue" class="value">--</span> lux</p>
+
                 </div>
+
+                
+
+                <div class = plantData></div>
+
+                    <div class = "moistureReading" data-sensor="groundMoisture">
+                        <h1> Plant 1 </h1>
+                        <h2>Ground Moisture</h2>
+                        <p><span id="GroundMoistureValue" class="value">--</span>%</p>
+                        <button>delete</button>
+                        <button>edit </button>
+                    </div>
+
+                    <div class = "moistureReading" data-sensor="groundMoisture">
+                        <h1> Plant 2 </h1>
+                        <h2>Ground Moisture</h2>
+                        <p><span id="GroundMoistureValue" class="value">--</span>%</p>
+                        <button>delete</button>
+                        <button>edit</button>
+                    </div>
+
+                </div>
+
+                <button id="addPlant">Add Plant</button>
+
             </div>
         </section>
     </div>
