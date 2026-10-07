@@ -27,7 +27,7 @@ void gatherData(client* c){
    DHT22 dht;
    std::string currTemp;
    while(true){
-      std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+      std::this_thread::sleep_for(std::chrono::milliseconds(8000));
       try{
          if(wsconnected){
             
@@ -52,6 +52,7 @@ void gatherData(client* c){
    std::cout << "  gatherDataloop function failed  ";
 }
 
+
 void on_open(client* c, websocketpp::connection_hdl hdl){
    global_hdl = hdl;
    wsconnected = true;
@@ -61,7 +62,7 @@ void connectLoop(client &c, websocketpp::connection_hdl hdl){
    websocketpp::lib::error_code ec;
    while(true){
       try{
-         c.connect(c.get_connection("ws://192.168.1.163:3000/ws", ec));
+         c.connect(c.get_connection("ws://137.140.166.198:3000/ws?type=data-node", ec));
          c.run();
          c.reset();
       }
