@@ -36,4 +36,9 @@
 
 ![alt text](dbERM.png)
 
+# 10/13
+
+## frontend visuals updated, YL-69 now transmits "dry" or "wet" which is displayed on the frontend. 
+## Successful implementation of DHT11 data sent through arduino websocket. The server recieves the data and treats it the same as if it was from the raspberry pi 3. 
+
 
