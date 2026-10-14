@@ -31,5 +31,11 @@ class DHT22{
 		
 };
 
+class YL69{
+	public:
+		std::string getSensorData();
+		
+};	
+
 
 #endif

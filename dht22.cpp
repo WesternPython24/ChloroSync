@@ -28,7 +28,7 @@ std::string DHT22::getSensorData(){
 	std::string humData;
 	std::getline(in_temp_input, tempData);
 	std::getline(in_humidityrelative_input, humData);
-	message = std::string("{\"") + "temp\": \"" + tempData + "\", \"" + "humidity\": \"" + humData + "\"}";
+	message = std::string("\"") + "temp\": \"" + tempData + "\", \"" + "humidity\": \"" + humData + "\"";
 	return message; 
 	
 }

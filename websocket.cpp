@@ -23,7 +23,7 @@ void sendMessage(client* c, websocketpp::connection_hdl hdl, std::string msg){
 void gatherData(client* c){
    FileHandler fh;
    fh.w1TempOpenLogs();
-   
+   YL69 yl69;
    DHT22 dht;
    std::string currTemp;
    while(true){
@@ -40,7 +40,10 @@ void gatherData(client* c){
             
             //this is for the DHT22 
             std::string tempHumData = dht.getSensorData();
-            sendMessage(c, global_hdl, tempHumData);
+            std::string groundMoistureData = yl69.getSensorData();
+            std::string sensorDataJson = "{" + tempHumData + ", " + groundMoistureData + "\"}";
+            
+            sendMessage(c, global_hdl, sensorDataJson);
             
          }
       } 
@@ -62,7 +65,7 @@ void connectLoop(client &c, websocketpp::connection_hdl hdl){
    websocketpp::lib::error_code ec;
    while(true){
       try{
-         c.connect(c.get_connection("ws://137.140.166.198:3000/ws?type=data-node", ec));
+         c.connect(c.get_connection("ws://192.168.1.163:3000/ws?type=data-node", ec));
          c.run();
          c.reset();
       }
