@@ -17,7 +17,7 @@ websockets::WebsocketsClient client;
 void setup() {
   Serial.begin(115200);
   dht.begin();
-
+  
 
   WiFi.begin(ssid, password);
 
@@ -36,9 +36,16 @@ void setup() {
 }
 
 void loop() {
-  String dataJson = "{\"temp\": \"" + String(dht.readTemperature()) + "\"}";
-  Serial.print(dataJson);
-  client.send(dataJson);
-  delay(10000);
+  client.poll();
+  if(client.available()){
+    String dataJson = "{\"temp\": \"" + String(dht.readTemperature()) + "\", \"humidity\": \"" + String(dht.readHumidity()) + "\"}";
+    Serial.print(dataJson);
+    client.send(dataJson);
+  }
+  else{
+    client.connect(ws_server_url);
+  }
 
+  
+  delay(10000);
 }
