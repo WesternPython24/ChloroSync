@@ -1,10 +1,30 @@
-const webSocketServer = new WebSocket('ws://localhost:3000/ws?type=browser');
+let webSocketServer;
 
-webSocketServer.onmessage = async (message) => {
-    console.log( new Date().toLocaleString() + ` Received: ${message.data}` );
-    jsonData = JSON.parse(message.data);
-    updatePlantData(jsonData.NODE_ID, jsonData);
+function connect() {
+    webSocketServer = new WebSocket(`ws://${window.location.hostname}:${window.location.port}/browser`);
+
+    webSocketServer.onmessage = async (message) => {
+        console.log( new Date().toLocaleString() + ` Received: ${message.data}` );
+        jsonData = JSON.parse(message.data);
+        updatePlantData(jsonData.NODE_ID, jsonData);
+    }
+
+    webSocketServer.onopen = () => {
+        console.log('WebSocket connection established');
+    }
+
+    webSocketServer.onclose = () => {
+        console.log('WebSocket connection closed, attempting to reconnect...');
+
+        setTimeout(() => {
+            connect();
+        }, 5000); 
+    };
 }
+
+connect();
+
+
 
 
 function updatePlantData(NODE_ID, plantData) {
