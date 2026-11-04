@@ -42,3 +42,10 @@
 ## Successful implementation of DHT11 data sent through arduino websocket. The server recieves the data and treats it the same as if it was from the raspberry pi 3. 
 
 
+# 11/3
+
+## Whitelist ensures the server only accepts verified connections
+## Stress tests shows the server backlogs at ~11000 connected edge devices. (Artillery software used)
+## Frontend automatically creates sections from templates when a new data node sends data. 
+## Frontend updated for mobile browsers
+
